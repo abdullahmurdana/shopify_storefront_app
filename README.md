@@ -63,3 +63,31 @@ This app needs Shopify Storefront API credentials. Do not commit real credential
    cp .env.example .env
 ```
 2. Add your own values to `.env`:
+
+SHOPIFY_STORE_DOMAIN=your-store.myshopify.com
+SHOPIFY_STOREFRONT_TOKEN=your_storefront_access_token
+
+3. `.env` is gitignored and will not be committed.
+
+## Security
+
+Store credentials are read from a local `.env` file and are never committed to the
+repository. `.env` is listed in `.gitignore`.
+
+## Roadmap
+
+- [CONFIRM which of these are not yet built, list them here, e.g.:]
+- Checkout flow
+- User accounts and order history
+- Wishlist
+
+## Author
+
+**Mohammed Abdullah Khan** - Flutter Developer
+
+Portfolio: https://abdullahmurdana.github.io ·
+LinkedIn: https://www.linkedin.com/in/abdullahmurdana
+
+## License
+
+Released under the MIT License. See [LICENSE](LICENSE) for details.
