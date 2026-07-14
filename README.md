@@ -7,6 +7,7 @@ kept separate from the API layer for maintainability.
 
 ![Flutter](https://img.shields.io/badge/Flutter-Dart-blue)
 ![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20Android-lightgrey)
+![State](https://img.shields.io/badge/State-GetX-purple)
 ![API](https://img.shields.io/badge/API-Shopify%20Storefront%20GraphQL-96bf48)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -18,16 +19,16 @@ and pricing, and presents them through reusable Flutter components. The data lay
 is decoupled from the UI, so screens map cleanly from API payloads without tying
 presentation to the raw responses.
 
-<!-- CONFIRM: is it built to point at ANY Shopify store via config (white-label),
-     or one specific store? Keep the line below only if the config-driven part is real. -->
-Store credentials (domain and Storefront access token) are supplied through
-configuration, so the app can point at different Shopify stores without code changes.
+The store domain and Storefront access token are supplied through configuration, so
+the same app can point at any Shopify store without code changes, effectively a
+white-label storefront driven entirely by config.
 
 ## Features
 
+- **Any store via config** — point the app at any Shopify store by supplying its domain and Storefront token; no code changes needed.
 - **Product catalogue** — browse products and collections pulled live from Shopify.
-- **Product details** — view descriptions, images, pricing, and product variations.
-- **Filtering** — [CONFIRM: category / attribute filtering — keep if real].
+- **Product details** — descriptions, images, pricing, and product variations.
+- **Filtering** — filter products by category and attributes.
 - **Cart** — add items, adjust quantities, and manage a shopping cart with running totals.
 - **GraphQL data layer** — efficient queries against the Shopify Storefront API.
 - **Decoupled architecture** — UI components separated from API models for maintainability.
@@ -35,9 +36,9 @@ configuration, so the app can point at different Shopify stores without code cha
 ## Tech stack
 
 - **Framework:** Flutter (Dart)
-- **State management:** [CONFIRM: GetX / BLoC / Provider]
+- **State management:** GetX
 - **API:** Shopify Storefront API (GraphQL)
-- **Networking:** [CONFIRM: graphql_flutter / http / Dio]
+- **Networking:** graphql (GraphQL client for Dart)
 - **Architecture:** Clean Architecture, decoupled UI and data layers
 
 ## Getting started
@@ -63,23 +64,23 @@ This app needs Shopify Storefront API credentials. Do not commit real credential
    cp .env.example .env
 ```
 2. Add your own values to `.env`:
-
 SHOPIFY_STORE_DOMAIN=your-store.myshopify.com
 SHOPIFY_STOREFRONT_TOKEN=your_storefront_access_token
-
 3. `.env` is gitignored and will not be committed.
 
 ## Security
 
 Store credentials are read from a local `.env` file and are never committed to the
-repository. `.env` is listed in `.gitignore`.
+repository. `.env` is listed in `.gitignore`, and only `.env.example` (with
+placeholder values) is tracked.
 
 ## Roadmap
 
-- [CONFIRM which of these are not yet built, list them here, e.g.:]
-- Checkout flow
+Core storefront functionality is complete. Planned future updates:
+
+- Checkout and payment flow
 - User accounts and order history
-- Wishlist
+- Wishlist and saved items
 
 ## Author
 
